@@ -56,10 +56,10 @@ public class TargetBehaviour : MonoBehaviour {
 		// Check if facing left or right
 		if (transform.eulerAngles == Vector3.zero) {
 			// If we're going right, positive
-			relativeEndPos.x = 6;
+			relativeEndPos.x = 4;
 		} else {
 			// Otherwise, negative
-			relativeEndPos.x = -6;
+			relativeEndPos.x = -4;
 		}
 
 		float movementTime = Vector3.Distance (parent.transform.position, relativeEndPos) * moveSpeed;
