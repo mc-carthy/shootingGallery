@@ -13,11 +13,14 @@ public class TargetBehaviour : MonoBehaviour {
 	private Animator animator;
 	private GameObject parent;
 
+	void Awake() {
+		GameController._instance.targets.Add (this);
+	}
+
 	void Start() {
 		parent = transform.parent.gameObject;
 		originalPos = parent.transform.position;
 		animator = parent.GetComponent<Animator> ();
-		ShowTarget ();
 	}
 
 	/// <summary>
