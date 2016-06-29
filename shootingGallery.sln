@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{394D57E5-D247-42F4-34A4-22866440EB6B}") = "shootingGallery", "Assembly-CSharp-firstpass.csproj", "{ECFDF7AC-9F92-0BC1-F992-BFF8D1BA66B2}"
+EndProject
+Project("{394D57E5-D247-42F4-34A4-22866440EB6B}") = "shootingGallery", "Assembly-CSharp.csproj", "{C7872EE6-23DB-6BBE-7B1E-228C16F81075}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECFDF7AC-9F92-0BC1-F992-BFF8D1BA66B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFDF7AC-9F92-0BC1-F992-BFF8D1BA66B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFDF7AC-9F92-0BC1-F992-BFF8D1BA66B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFDF7AC-9F92-0BC1-F992-BFF8D1BA66B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7872EE6-23DB-6BBE-7B1E-228C16F81075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7872EE6-23DB-6BBE-7B1E-228C16F81075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7872EE6-23DB-6BBE-7B1E-228C16F81075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7872EE6-23DB-6BBE-7B1E-228C16F81075}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
