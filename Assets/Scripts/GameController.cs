@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI; // Text
 using System.Collections; // IEnumerator
 using System.Collections.Generic; // List
 
@@ -8,12 +9,25 @@ public class GameController : MonoBehaviour {
 	[HideInInspector]
 	public List<TargetBehaviour> targets = new List<TargetBehaviour> ();
 
+	private float timeLeft;
+	public Text timeText;
+
 	void Awake() {
+		timeLeft = 50;
+		timeText.text = timeLeft.ToString ();
 		_instance = this;
 	}
 
 	void Start () {
-		StartCoroutine ("SpawnTargets");
+		iTween.ValueTo(gameObject, iTween.Hash(
+			"from", timeLeft,
+			"to", 0,
+			"time", timeLeft,
+			"onupdatetarget", gameObject,
+			"onupdate", "tweenUpdate",
+			"oncomplete", "GameComplete"
+		));
+		StartCoroutine("SpawnTargets");
 	}
 	
 	void SpawnTarget() {
@@ -37,6 +51,22 @@ public class GameController : MonoBehaviour {
 			}
 
 			yield return new WaitForSeconds(Random.Range(0.5f * numOfTargets, 2.5f));
+		}
+	}
+
+	void GameComplete() {
+		StopCoroutine("SpawnTargets");
+		timeText.color = Color.black;
+		timeText.text = "GAME OVER";
+	}
+
+	void tweenUpdate(float newValue) {
+		timeLeft = newValue;
+		if (timeLeft > 10) {
+			timeText.text = timeLeft.ToString("#");
+		} else {
+			timeText.color = Color.red;
+			timeText.text = timeLeft.ToString("#.0");
 		}
 	}
 }
