@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour {
 
 	private float timeLeft;
 	public Text timeText;
+	private int score;
+	public Text scoreText;
+	public Text highScoreText;
 
 	void Awake() {
 		timeLeft = 50;
@@ -28,6 +31,8 @@ public class GameController : MonoBehaviour {
 			"oncomplete", "GameComplete"
 		));
 		StartCoroutine("SpawnTargets");
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt("highScore").ToString();
+		score = 0;
 	}
 	
 	void SpawnTarget() {
@@ -67,6 +72,15 @@ public class GameController : MonoBehaviour {
 		} else {
 			timeText.color = Color.red;
 			timeText.text = timeLeft.ToString("#.0");
+		}
+	}
+
+	public void IncreaseScore() {
+		score++;
+		scoreText.text = "Score: " + score.ToString ();
+		if (score > PlayerPrefs.GetInt ("highScore")) {
+			PlayerPrefs.SetInt ("highScore", score);
+			highScoreText.text = "High Score: " + score.ToString ();
 		}
 	}
 }

@@ -29,6 +29,7 @@ public class TargetBehaviour : MonoBehaviour {
 	/// </summary>
 	void OnMouseDown() {
 		if (!beenHit && activated) {
+			GameController._instance.IncreaseScore ();
 			beenHit = true;
 			animator.Play ("Flip");
 
